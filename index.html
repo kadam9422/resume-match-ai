@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Full-stack AI project</p>
+          <h1>AI Resume Analyzer</h1>
+          <p class="hero-copy">
+            Upload a resume, analyze it with Gemini-powered insights, and save your results securely.
+          </p>
+        </div>
+        <div class="auth-card">
+          <h2>Create account</h2>
+          <form id="registerForm" class="auth-form">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" type="email" placeholder="Email" required />
+            <input name="password" type="password" placeholder="Password" required />
+            <button type="submit">Register</button>
+          </form>
+
+          <h2 class="section-title">Sign in</h2>
+          <form id="loginForm" class="auth-form">
+            <input name="email" type="email" placeholder="Email" required />
+            <input name="password" type="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+          </form>
+          <p id="userStatus" class="status-pill">Not signed in yet</p>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <h2>Analyze your resume</h2>
+          <form id="analysisForm" class="analysis-form">
+            <input id="roleInput" name="role" placeholder="Target role, e.g. Software Engineer" />
+            <input id="resumeInput" name="resume" type="file" accept=".pdf,.docx,.txt" required />
+            <button type="submit">Analyze Resume</button>
+          </form>
+          <div id="statusMessage" class="status-box">Choose a file and start the analysis.</div>
+        </section>
+
+        <section class="panel">
+          <h2>Analysis result</h2>
+          <div id="resultCard" class="result-card">
+            <p class="muted">Your AI-generated insights will appear here.</p>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel history-panel">
+        <h2>Recent analyses</h2>
+        <div id="historyList" class="history-list"></div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
